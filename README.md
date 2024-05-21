@@ -4,7 +4,7 @@ Issue replication codebase for Litestar and Strawberry.
 
 ## Stack
 
-- [Litestar](https://rye-up.com/) >= 2.8.3
+- [Litestar](https://litestar.dev/) >= 2.8.3
 - [Rye](https://rye-up.com/) for package management.
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [Strawberry](https://strawberry.rocks/) >= 0.229.1

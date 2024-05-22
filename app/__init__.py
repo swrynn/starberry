@@ -1,18 +1,19 @@
+from __future__ import annotations
+from typing import Dict
 import strawberry
 
 from litestar import Litestar, get
-from litestar.contrib.sqlalchemy.plugins import SQLAlchemyInitPlugin
 from litestar.plugins.structlog import StructlogPlugin
 from strawberry.litestar import make_graphql_controller
 from strawberry.tools import merge_types
 
-from .users import UsersQuery
-from .db import on_startup, sqlalchemy_config
-from .custom_context import custom_context_getter
+from .users import User, UserDefinition, UsersQuery
+from .db import sqlalchemy_plugin
+from .custom_context import CustomContext, custom_context_getter
 
 
 @get("/")
-def health() -> dict[str, bool]:
+def health() -> Dict[str, bool]:
     """
     Just a simple health checker to know if base server is running fine.
     """
@@ -33,10 +34,11 @@ GraphQLController = make_graphql_controller(
 
 
 app = Litestar(
-    on_startup=[on_startup],
+    debug=True,
+    signature_types=[UserDefinition, User, strawberry.Info, CustomContext],
     plugins=[
         StructlogPlugin(),
-        SQLAlchemyInitPlugin(config=sqlalchemy_config),
+        sqlalchemy_plugin,
     ],
     route_handlers=[
         health,

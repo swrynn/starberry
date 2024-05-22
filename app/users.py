@@ -1,5 +1,6 @@
-import strawberry
+from __future__ import annotations
 
+import strawberry
 from datetime import datetime
 from typing import TYPE_CHECKING, List, Optional
 

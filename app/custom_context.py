@@ -2,6 +2,7 @@
 Followed the guide from here: https://strawberry.rocks/docs/integrations/litestar#context_getter
 """
 
+from __future__ import annotations
 from litestar import Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from strawberry.litestar import BaseContext

@@ -6,6 +6,7 @@
 #   features: []
 #   all-features: false
 #   with-sources: false
+#   generate-hashes: false
 
 -e file:.
 advanced-alchemy==0.8.4
@@ -35,6 +36,9 @@ editorconfig==0.12.4
     # via jsbeautifier
 email-validator==2.1.1
     # via litestar
+exceptiongroup==1.2.1
+    # via anyio
+    # via litestar
 faker==25.2.0
     # via polyfactory
 fast-query-parsers==1.0.3
@@ -60,10 +64,9 @@ jinja2==3.1.4
     # via litestar
 jsbeautifier==1.15.1
     # via litestar
-libcst==1.3.1
+libcst==1.1.0
     # via strawberry-graphql
 litestar==2.8.3
-    # via litestar
     # via starberry
 mako==1.3.5
     # via alembic
@@ -78,6 +81,8 @@ msgspec==0.18.6
     # via litestar
 multidict==6.0.5
     # via litestar
+mypy-extensions==1.0.0
+    # via typing-inspect
 polyfactory==2.16.0
     # via litestar
 pydantic==2.7.1
@@ -123,7 +128,6 @@ starlette==0.37.2
     # via strawberry-graphql
 strawberry-graphql==0.229.1
     # via starberry
-    # via strawberry-graphql
 structlog==24.1.0
     # via litestar
 typer==0.12.3
@@ -132,6 +136,8 @@ typing-extensions==4.11.0
     # via advanced-alchemy
     # via aiosqlite
     # via alembic
+    # via anyio
+    # via libcst
     # via litestar
     # via polyfactory
     # via pydantic
@@ -140,6 +146,10 @@ typing-extensions==4.11.0
     # via sqlalchemy
     # via strawberry-graphql
     # via typer
+    # via typing-inspect
+    # via uvicorn
+typing-inspect==0.9.0
+    # via libcst
 uvicorn==0.29.0
     # via litestar
     # via strawberry-graphql
